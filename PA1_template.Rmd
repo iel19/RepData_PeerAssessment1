@@ -8,7 +8,7 @@ output: html_document
 First, we load the activity data, and ensure the steps are numeric.
 
 ```{r}
-activity <- read.csv("C:/Users/Isaac/Desktop/Coursera Data Science Specialization/5, Reproducible Research/repdata-data-activity/activity.csv")
+activity <- read.csv("repdata-data-activity/activity.csv")
 ```
 ## What is mean total number of steps taken per day?
 We will have to do a lot of aggregate/ counting. We take advantage of the sqldf package.
