@@ -24,6 +24,7 @@ The following shows a histogram of total steps per day
 ```{r}
 hist(as.numeric(hist_data $ sum), main = "Steps per Day", xlab = "Steps")
 ```
+![plot of chunk plot1](figure/unnamed-chunk-3-1.png) 
 
 We get the mean and median by the built in R functions. (Set the scipen options so the numbers display correctly)
 ```{r}
@@ -41,6 +42,7 @@ Now, lets aggregate instead on the interval, and make the graph.
 time_series <- sqldf("select interval, avg(steps) 'avg' from activity group by interval")
 plot(time_series, type = "l", ylab = "Average Steps", xlab = "Which 5 min time interval", main = "Avg Steps for Each Interval")
 ```
+![plot of chunk plot1](figure/unnamed-chunk-5-1.png) 
 
 We can easily select the max using subset & max functions.
 ```{r}
@@ -70,6 +72,7 @@ hist(as.numeric(hist_data_new $ sum), main = "Revised Steps per Day", xlab = "St
 mean_new <- mean(hist_data_new $ sum, na.rm = TRUE)
 median_new <- median(hist_data_new $ sum, na.rm = TRUE)
 ```
+![plot of chunk plot1](figure/unnamed-chunk-9-1.png) 
 
 The mean steps per day is `r mean_new`, while the median is `r median_new`. See the change in the histogram. As expected, the mean and median are different, since instead of ignoring NA values, we filled in the missing data with averages. This data set shows a decrease since the data is skewed to the left.
 
@@ -99,3 +102,4 @@ plot(wkend,
 
 title(main = "Weekday", ylab = "Number of Steps", xlab = "Interval")
 ```
+![plot of chunk plot1](figure/unnamed-chunk-11-1.png) 
